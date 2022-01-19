@@ -8,5 +8,15 @@
      <li><a href="chapter2.html" tabindex="3">Chapter 2</a></li>
      <li><a href="chapter3.html" tabindex="2">Chapter 3</a></li>
   </ol>
+  <input type="text" name="test1" />
+  <textarea id="tb" name="test2"></textarea>
+  <input type="text" name="test3" />
+  <script>
+      document.getElementById('tb').addEventListener('keydown', function(e) {
+      if (e.key == 'Tab') {
+          e.preventDefault();
+      }
+  });
+  </script>
 </div>
 </html>
