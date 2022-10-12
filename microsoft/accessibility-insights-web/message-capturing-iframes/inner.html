@@ -4,12 +4,22 @@
   empty input with no name below
   <input></input>
   </br>
-  <input type="checkbox" id="stopPropagation">stop propagation of message events</input>
+  </br>
+  <input type="checkbox" id="stopPropagation" title="stop propagation">stop propagation of message events</input>
+  <input type="checkbox" id="delayPropagation" title="delay propagation">delay propagation of message events 1 second</input>
   <script>
       window.stopMessages = window.addEventListener("message", (ev) => {
         var cb = document.getElementById("stopPropagation");
         if (cb.checked) {
           event.stopImmediatePropagation();
+        }
+        var cb2 = document.getElementById("delayPropagation");
+        if (cb2.checked) {
+          // hack to wait synchronously
+          var date = Date.now();
+          while (Date.now() - date < 1000) {
+
+          }
         }
       });
   </script>
